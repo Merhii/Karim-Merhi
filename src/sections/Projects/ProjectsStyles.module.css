@@ -1,39 +1,84 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  
-    img{
-      max-width: 250px;
-      align-self: center;
-      background-color: var(--project-card-bg);
-      border-radius: 20px;
-    }
-  
-    a {
-      width: fit-content;
-      text-decoration: none;
-      color: #222;
-      transition: transform 200ms ease-in-out;
-    }
-  
-    a:hover {
-      transform: scale(1.05);
-    }
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px;
+
+  img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    align-self: center;
+    background-color: var(--project-card-bg);
+    border-radius: 20px;
   }
-  
+
+  a {
+    text-decoration: none;
+    transition: transform 200ms ease-in-out;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+  }
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.projectsContainer :global(.projectCard) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 250px;
+}
+
+.projectsContainer :global(.projectCard) p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.projectsContainer :global(.projectPlaceholder) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  border: 2px solid var(--text-color);
+  border-radius: 20px;
+  padding: 0 16px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  color: var(--text-color);
+}
+
+.projectsContainer :global(.projectStack) {
+  font-size: 13px;
+  color: var(--footer-text-color);
+}
+
+@media (width >= 800px) {
   .projectsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px 40px;
+    padding: 0 30px;
   }
-  
-  @media (width >= 800px) {
-    .projectsContainer {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      padding: 0 30px;
-    }
+
+  .projectsContainer :global(.projectCard) p {
+    font-size: 16px;
   }
+
+  .projectsContainer :global(.projectStack) {
+    font-size: 14px;
+  }
+}
