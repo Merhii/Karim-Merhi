@@ -1,6 +1,7 @@
 import styles from './ProjectsStyles.module.css';
 import ProjectCard from '../../assets/common/ProjectCard';
 import moniz from '../../assets/moniz.png';
+import balletLBaher from '../../assets/ballet-l-baher.jpg';
 
 function Projects() {
   return (
@@ -21,9 +22,13 @@ function Projects() {
           stack={['TypeScript', 'Node', 'npm']}
         />
         <ProjectCard
-          h3="Balet l Baher"
-          p="In the works"
-          comingSoon
+          src={balletLBaher}
+          link="https://merhii.github.io/ballet-l-baher/"
+          repo="https://github.com/Merhii/ballet-l-baher"
+          linkLabel="Play"
+          h3="Ballet l Ba7er"
+          p="A 3D game where you tile the Mediterranean. Lay balat off the Saida corniche; every night the waves take your edges back"
+          stack={['Three.js', 'JavaScript', 'WebGL']}
         />
       </div>
     </section>
